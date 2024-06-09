@@ -1,0 +1,183 @@
+Experiment 1 is observiing M1 genes seperately and acting only on {TGFb, TNF, IL10, HGF, cytotox}
+
+Experiement 2 is observiing M1 genes combined (summed) and acting only on {TGFb, TNF, IL10, HGF, cytotox}
+
+
+
+Experiment 4 is observing everything and acting on only {TGFb, TNF, IL10, HGF, cytotox}
+
+Experiment 5 is observiing everything and acting on everything
+
+experiment 6 is same as 2 but training for a week
+
+experiment 7 is same as 2 for only 30 hours (didnt run on week and we lost the reservation- need to restart it)
+
+experiment 8 is the normal sum M1 and act on subset
+
+experiment 12 is sense M1 and act on everything
+
+experiment 13 is same as 12
+
+experiment 14 is observe everything and act on everything
+
+^^^^ Experiments were on the no fibroblast version ofthe WEABM ^^^^ (i think)
+
+experiment 15 is observe everything, act on everything
+
+experiment 16 is observe everything, act on only TGFb, TNF, IL10, HGF and cytotox
+
+experiment 17 is observe everything, act only on TNF, IL10, and IL4
+
+experiment 18 is observe only M1, act on everything
+
+experiment 19 is observe only M1, act on only TGFb, TNF, IL10, HGF and cytotox
+
+experiment 20 is observe only M1, act on only TNF, IL10, and IL4
+
+
+
+-----NEW WEABM VESRION-----
+
+
+experiment 21 uses a new version of WEABM with full action/obs
+
+experiment 22 is accudentally the same as 21 (forgot to change which env file to use)
+
+experiment 23 is same as 21 (re-run due to mpi error cutting it short)
+
+experiment 24 is limited action/observation
+
+experiment 23/24 are because 21 and 22 ran out of memory necause of mpi stuff I think, so re-running as experiments 23/24
+
+experiments 25/26 are same as 23/24 except using PPO instead of DDPG
+
+
+-----hgf factor = 2 -----
+experiment 27 is full/full
+
+experiment 28 is limited
+
+-----hgf factor = 3-----
+experiment 29 is full
+
+experiment 30 is limited
+
+-----hgf factor = 4 -----
+experment 31 is full
+experiment 32 is limited
+
+-----hgf gfactor = 5-----
+experiment 33 is ful
+experiment 34 is limited
+
+
+-----hgf factor 1------
+exp35/36 are full/limited, action_scaling=2
+exp37/38 are full/limited, action_scaling=3
+exp39/40 are full/limited, action_scaling=4
+exp41/42 are full/limited, action_scaling=5
+exp43/44 are full/limited, action_scaling=7.5
+exp45/46 are full/limited, action_scaling=10
+
+-----hgf factor 2------
+exp47/48 are full/limited, action_scaling=2
+exp 49/50 are full/limited, action_scaling=3
+exp 51/52 are full/limited, action_scaling=4
+exp 53/54 are full/limited, action_scaling=5
+exp 55/56 are full/limited, action_scaling=7.5
+exp 57/58 are full/limited, action_scaling=10
+
+-----hgf factor 3------
+exp 59/60are full/limited, action_scaling=2
+exp 61/62are full/limited, action_scaling=3
+exp 63/64are full/limited, action_scaling=4
+exp 65/66are full/limited, action_scaling=5
+exp 67/68are full/limited, action_scaling=7.5
+exp 69/70are full/limited, action_scaling=10
+
+-----hgf factor 4------
+exp71/72 are full/limited, action_scaling=2
+exp73/74 are full/limited, action_scaling=3
+exp75/76 are full/limited, action_scaling=4
+exp77/78 are full/limited, action_scaling=5
+exp79/80 are full/limited, action_scaling=7.5
+exp81/82 are full/limited, action_scaling=10
+
+-----hgf factor 5------
+exp83/84 are full/limited, action_scaling=2
+exp85/86 are full/limited, action_scaling=3
+exp87/88 are full/limited, action_scaling=4
+exp89/90 are full/limited, action_scaling=5
+exp91/92 are full/limited, action_scaling=7.5
+exp93/94 are full/limited, action_scaling=10
+
+
+exp95 is full obs, act only on HGF, action_scaling=1
+exp96 is full obs, act only on HGF, action_scaling=2
+exp97 is full obs, act only on HGF, action_scaling=3
+exp98 is full obs, act only on HGF, action_scaling=4
+exp99 is full obs, act only on HGF, action_scaling=5
+exp100 is full obs, act only on HGF, action_scaling=7.5
+exp101 is full obs, act only on HGF, action_scaling=10
+exp102 is full obs, act only on HGF, action_scaling=25
+exp103 is full obs, act only on HGF, action_scaling=50
+
+
+exp104 is limtied action space/obs space, action_scaline=10, using PPO2 and a MLP Policy
+exp105 is limtied action space/obs space, action_scaline=10, using PPO2 and a recurrent Policy
+
+exp106 and 107 are identical, full/full, action_scaline=1, hypothetical fibroblast experiment
+
+exp 109-127 are limited actionspace/obs space, action scaling in increments of .05 from 0.05-1
+
+-------------------------------------------------------------------
+WEABM_interval_1 does not actually have any interval to it. it is full control the whole time. 
+Observe NO(as sum of M1 genes) and TGFb, act on TGFb, TNF, IL10, HGF and cytotox
+
+interval 2 is actual interval training with brand new model. Same obs/action as interval1, but 6 hours on,42 off
+
+int3 = int1
+int4=int2
+int3_test is testing the non-interval trained model from int3 in an interval setting
+
+
+
+
+
+
+
+
+------------------------------------------------------
+new model on 4/20
+base model
+test 130 is full control, sensing NO+tgfb, controlling TNF, IL10, TGFb, ROS, HGF
+test 131 is full control, sensing NO+tgfb, controlling TNF, IL10, TGFb, ROS
+test 132 and 133 are same as 130 and 131, but actions scaling =10
+test 134 and 135 are same as 130/131 but actions scaling = 100
+
+
+F2 model
+136 is full control, with above control and sensing scheme
+137 is same but no control from HGF
+138/139 are action scaling 10
+140/141 are action scaling 100
+
+Estim Model
+142 is full control, with above control and sensing scheme
+143 is same but no control from HGF
+144/145 are action scaling 10
+146/147 are action scaling 100
+
+Estim + ECM Model
+148 is fill control with above control and sensing scheme
+149 is same but no control from HGF
+150/151 are action scaling 10
+152/153 are action scaling 100
+
+
+
+
+
+
+
+
